@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`has all needed routes 1`] = `
+Object {
+  "Chat": Object {
+    "screen": [Function],
+  },
+  "Home": Object {
+    "screen": [Function],
+  },
+}
+`;
