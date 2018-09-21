@@ -1,5 +1,5 @@
-# whatappClone
-*  whatapp look alike app with react-native.
+# whatsappClone
+*  whatsapp look alike app with react-native.
 
 # Prerequisites
 * You have to install _AndroidStudio_ or _XCode_.
