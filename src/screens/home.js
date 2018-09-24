@@ -11,8 +11,8 @@ class Home extends React.Component {
             <View style={styles.container}>
                 <View>
                     <Button
-                        onPress={() => this.props.navigation.navigate("Chat", {name: "john"})}
-                        title="john"
+                        onPress={() => this.props.navigation.navigate("Chat", {name: "Dark Vader"})}
+                        title="Dark Vader"
                     />
                 </View>
             </View>

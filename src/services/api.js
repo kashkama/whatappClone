@@ -4,15 +4,15 @@ const mockMessages = [
         message: "Hi Owen"
     },
     {
-        outgoing: true,
-        message: "Hi, Purity"
+        incoming: false,
+        message: "Hi, Vader"
     },
     {
         incoming: true,
         message: "When we will learn real data fetching?"
     },
     {
-        outgoing: true,
+        incoming: false,
         message: "First we need to learn debugging and testing, then we will learn styling and animations and then we will learn real data fetching. Let's use this mock data for now ok?"
     }
 ];
