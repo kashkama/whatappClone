@@ -4,18 +4,18 @@ import { LayoutAnimation } from "react-native";
 
 class AnimationPlayground extends React.Component {
 	state = {
-		activeIndex: 0
-    }
-    
-    componentDidMount() {
+        activeIndex: 0,
+	}
+        
+    componentDidMount(){
         const { configureNext, create, Properties, Types } = LayoutAnimation;
         configureNext(
-            create(500, Types.linear, Properties.scaleXY)
+          create(500, Types.linear, Properties.scaleXY)
         )
     }
     
 	onPress(activeIndex) {
-        // LayoutAnimation.configureNext(LayoutAnimation.Presets.spring);
+        LayoutAnimation.configureNext(LayoutAnimation.Presets.spring);
 		this.setState({activeIndex})
     }
     
