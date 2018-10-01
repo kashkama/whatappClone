@@ -1,56 +1,45 @@
 import React from "react";
 import {View, Text, StyleSheet, Button, FlatList, ImageBackground } from "react-native";
-import { getMockData } from "./../services/api";
+import { getMessages, postMessage } from "./../services/api";
 
 class ChatScreen extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            messages: []
-        };
-        this.getMessageRow = this.getMessageRow.bind(this);
-    }
 
     static navigationOptions = ({ navigation }) => ({
         title: `Chat with ${navigation.state.params.name}`
     })
 
+    state = {
+        messages: []
+    };
+
+
     componentDidMount() {
-        getMockData().then((messages) => {
+        this.unsubscribeGetMessages = getMessages((snapshot) => {
             this.setState({
-                messages
+                messages: Object.values(snapshot.val())
             })
         })
     }
 
-    getMessageRow(item) {
-        return (
-            <View
-                style={[
-                    styles.listItem, item.incoming ?
-                        styles.incomingMessage:
-                        styles.outgoingMessage
-                ]}
-            >
-                <Text style={styles.textColor}>{item.message}</Text>
-            </View>
-        )
+    componentWillUnmount() {
+        this.unsubscribeGetMessages();
     }
 
     render() {
         const {messages} = this.state;
+        console.log(messages);
         return(
             <ImageBackground 
-                style={styles.container}
+                style={[styles.container, styles.backgroundImage]}
                 source={require("./../assets/images/background.png")}
             >
                 <FlatList
+                    style={styles.container}
                     data={messages}
                     keyExtractor={(item, index) => (`message-${index}`)}
-                    renderItem={({ item }) =>
-                        this.getMessageRow(item)
-                    }
+                    renderItem={Message}
                 />
+                <Compose submit={postMessage}/>
             </ImageBackground>
         )
     }

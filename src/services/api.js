@@ -1,3 +1,5 @@
+import { initialize, setListener, pushData } from "./firebase";
+
 const mockMessages = [
     {
         incoming: true,
@@ -20,3 +22,16 @@ const mockMessages = [
 export const getMockData = () => (
     new Promise(resolve => setTimeout(() => resolve(mockMessages), 1000))
 )
+
+export const initApi = () => initialize();
+
+export const getMessages = (updaterFn) => setListener("messages", updaterFn);
+
+export const postMessage = (message) => {
+    if(Boolean(message)) {
+        pushData("messages", {
+            incoming: false,
+            message
+        })
+    }
+};
