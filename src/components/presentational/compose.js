@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
         borderColor: "#979797",
         borderStyle: "solid",
         borderWidth: 1,
-        borderRadius: 2
+        borderRadius: 10
     },
     compose: {
         flexDirection: "row",

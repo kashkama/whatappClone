@@ -5,7 +5,7 @@ const Message = ({item}) => (
     <View 
         style={[
             styles.message, 
-            item.incoming && styles.incomingMessage
+            item.incoming && styles.incomingMessage || styles.outgoingMessage
         ]}
     >
         <Text>{item.message}</Text>
@@ -26,6 +26,10 @@ const styles = StyleSheet.create({
     incomingMessage: {
         alignSelf: "flex-start",
         backgroundColor: "#E1FFC7"
+    },
+    outgoingMessage: {
+        alignSelf: "flex-end",
+        backgroundColor: "white"
     }
 })
 
