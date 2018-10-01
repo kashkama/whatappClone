@@ -1,5 +1,7 @@
 import React from "react";
 import {View, Text, StyleSheet, Button, FlatList, ImageBackground } from "react-native";
+import Compose from "./../components/presentational/compose";
+import Message from "./../components/presentational/message";
 import { getMessages, postMessage } from "./../services/api";
 
 class ChatScreen extends React.Component {

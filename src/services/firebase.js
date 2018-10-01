@@ -6,7 +6,7 @@ export const initialize = () => firebase.initializeApp({
     databaseURL: "https://whatsappclone-20181.firebaseio.com",
     projectId: "whatsappclone-20181",
     storageBucket: "whatsappclone-20181.appspot.com",
-    messagingSenderId: process.env.messagingSenderId
+    messagingSenderId: "315651881181"
 });
 
 export const setListener = (endpoint, updaterFn) => {
