@@ -12,10 +12,8 @@ class Compose extends React.Component {
     }
 
     submit() {
-        this.props.submit(this.state.text);
-        this.setState({
-            text: ""
-        })
+        this.props.submit(this._composeField.props.value);
+        this._composeField.clear();
         Keyboard.dismiss();
     }
 
@@ -23,6 +21,7 @@ class Compose extends React.Component {
         return(
             <View style={styles.compose}>
                 <TextInput
+                    ref={(textInput) => this._composeField = textInput}
                     style={styles.composeText}
                     value={this.state.text}
                     onChangeText={(text) => this.setState({text})}

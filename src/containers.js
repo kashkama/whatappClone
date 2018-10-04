@@ -3,8 +3,8 @@ import ChatScreen from "./screens/chatScreen";
 import { postMessageToserver, subscribeToGetMessagesFromServer, unsubscribeToGetMessagesFromServer} from "./actions/actions"
 
 export const ChatScrn = connect(
-	({messages}) => ({
-		messages: messages
+	(state) => ({
+		messages: state.messages
 	}),
 	({
 		postMessageToserver, subscribeToGetMessagesFromServer, unsubscribeToGetMessagesFromServer
