@@ -10,6 +10,7 @@ export const postMessageToserver = (message) => (dispatch) => {
         }
     })
     postMessage(message)
+        // causing errors with sending and displaying messages
         .then(() => {
             dispatch({
                 type: C.POST_MESSAGE_SUCCESS
