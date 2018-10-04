@@ -1,11 +1,14 @@
 import { constants as C } from "./../utils/constants";
+import { getMessages, postMessage } from "./../services/api";
 
-export function addMessage(message) {
-    return {
-        type: C.ADD_MESSAGE,
-        payload: {
-            message,
-            incoming: false
-        }
-    }
+export const postMessageToserver = (message) => (dispatch) => {
+
+}
+
+export const subscribeToGetMessagesFromServer = () => (dispatch) => {
+
+}
+
+export const unsubscribeToGetMessagesFromServer = () => (dispatch, getState) => {
+    
 }

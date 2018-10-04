@@ -2,7 +2,6 @@ import React from "react";
 import {View, Text, StyleSheet, Button, FlatList, ImageBackground } from "react-native";
 import Compose from "./../components/presentational/compose";
 import Message from "./../components/presentational/message";
-import { getMessages, postMessage } from "./../services/api";
 
 class ChatScreen extends React.Component {
 
@@ -10,26 +9,16 @@ class ChatScreen extends React.Component {
         title: `Chat with ${navigation.state.params.name}`
     })
 
-    state = {
-        messages: []
-    };
-
-
     componentDidMount() {
-        this.unsubscribeGetMessages = getMessages((snapshot) => {
-            this.setState({
-                messages: Object.values(snapshot.val())
-            })
-        })
+        this.props.subscribeToGetMessagesFromServer();
     }
 
     componentWillUnmount() {
-        this.unsubscribeGetMessages();
+        this.props.unsubscribeToGetMessagesFromServer();
     }
 
     render() {
-        const {messages} = this.state;
-        console.log(messages);
+        console.log(this.props);
         return(
             <ImageBackground 
                 style={[styles.container, styles.backgroundImage]}
@@ -37,11 +26,11 @@ class ChatScreen extends React.Component {
             >
                 <FlatList
                     style={styles.container}
-                    data={messages}
+                    data={this.props.messages}
                     keyExtractor={(item, index) => (`message-${index}`)}
                     renderItem={Message}
                 />
-                <Compose submit={postMessage}/>
+                <Compose submit={this.props.postMessageToserver}/>
             </ImageBackground>
         )
     }
