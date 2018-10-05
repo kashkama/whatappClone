@@ -29,7 +29,7 @@ export const getMessages = (updaterFn) => setListener("messages", updaterFn);
 
 export const postMessage = (message) => {
     if (Boolean(message)) {
-        pushData("messages", {
+        return pushData("messages", {
             incoming: false,
             message
         })
