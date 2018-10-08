@@ -10,10 +10,7 @@
 * install dependencies `npm i`.
 * run the `react-native run-android` or `react-native run-ios` depending your platform.
 
-## Firebase Setup
-* navigate to [firebase console](https://console.firebase.google.com)
-* Follow instructions of how to set up a project in firebase.
-* Navigate to _src/services/firebase.js_ to initialize you firebase apiKey. Just copy and paste.
-* When done import your message json file from _src/services/messages.json_ into firebase database.
+## APIs and Libraries
+
 
 ### STILL IN DEVELOPMENT
