@@ -10,10 +10,9 @@
 * install dependencies `npm i`.
 * run the `react-native run-android` or `react-native run-ios` depending your platform.
 
-## Firebase Setup
-* navigate to [firebase console](https://console.firebase.google.com)
-* Follow instructions of how to set up a project in firebase.
-* Navigate to _src/services/firebase.js_ to initialize you firebase apiKey. Just copy and paste.
-* When done import your message json file from _src/services/messages.json_ into firebase database.
+## Rails_Api Auth Setup
+* Linking app to Rails backend.
+* Creating authentication system for logging into the app and sending and receiving data from authenticated routes in the backend.
+* Using Redux and a Token based authenticated approach.
 
 ### STILL IN DEVELOPMENT
