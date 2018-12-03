@@ -1,7 +1,5 @@
-import Home from "./../screens/home";
-import ChatScreen from "./../screens/chatScreen";
+import Login from "./../screens/login";
 
 export const routes = {
-    Home: {screen: Home},
-    Chat: {screen: ChatScreen}
+    Login: {screen: Login}
 };

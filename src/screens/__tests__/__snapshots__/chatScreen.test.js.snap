@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`ChatScreen has proper navigation options 1`] = `
-Object {
-  "title": "Chat with john",
-}
-`;
-
-exports[`renders ChatScreen component correctly 1`] = `[Function]`;
